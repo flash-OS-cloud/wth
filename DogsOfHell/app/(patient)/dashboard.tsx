@@ -187,7 +187,7 @@ export default function Dashboard() {
   // NORMAL DASHBOARD VIEW
   // ==================================================
   return (
-    <View className="flex-1 bg-zinc-950 px-4 pt-10">
+    <View className="flex-1 bg-[#fefefe] px-4 pt-10">
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         
         {/* --- HEADER --- */}
@@ -250,7 +250,7 @@ export default function Dashboard() {
 
         {/* --- GREETING & HERO --- */}
         <View className="mb-8">
-          <Text className="text-white text-3xl font-bold">Hi, Rahul 👋</Text>
+          <Text className="text-black text-3xl font-bold">Hi, Rahul 👋</Text>
         </View>
 
         <View className="items-center mb-10 w-full h-56 bg-zinc-900/50 rounded-2xl border border-zinc-800 justify-center overflow-hidden">
@@ -265,11 +265,11 @@ export default function Dashboard() {
         <View className="mb-10 gap-6">
           {steps.map((step) => (
             <View key={step.num} className="flex-row items-start gap-4">
-              <View className="w-10 h-10 bg-teal-900 rounded-full items-center justify-center border-2 border-teal-600">
+              <View className="w-10 h-10 bg-teal-100 rounded-full items-center justify-center ">
                 <Text className="text-teal-400 text-xl font-bold">{step.num}</Text>
               </View>
               <View className="flex-1">
-                <Text className="text-white text-lg font-semibold">{step.title}</Text>
+                <Text className="text-zinc-500 text-lg font-semibold">{step.title}</Text>
                 <Text className="text-zinc-500 text-base">{step.desc}</Text>
               </View>
             </View>
@@ -280,7 +280,7 @@ export default function Dashboard() {
         <View className="w-full mb-10">
           <Pressable
             onPress={pickImageAsync}
-            className="py-4 rounded-2xl flex-row justify-center items-center gap-2 bg-teal-900 border border-zinc-700"
+            className="py-4 rounded-2xl flex-row justify-center items-center gap-2 bg-teal-500 "
           >
             <Ionicons name="camera-outline" size={24} color="white" />
             <Text className="text-white font-bold text-lg">Select an Image</Text>
@@ -292,10 +292,10 @@ export default function Dashboard() {
           {featureCards.map((card, i) => (
             <View
               key={i}
-              className="flex-1 items-center bg-zinc-900 p-4 rounded-xl border border-zinc-800 justify-center h-28 gap-2"
+              className="flex-1 items-center bg-zinc-100 p-4 rounded-xl shadow  justify-center h-28 gap-2"
             >
               <Ionicons name={card.icon as any} size={28} color="#2dd4bf" />
-              <Text className="text-white text-center text-sm font-medium">{card.label}</Text>
+              <Text className="text-black font-bold text-center text-sm ">{card.label}</Text>
             </View>
           ))}
         </View>
@@ -326,7 +326,7 @@ export default function Dashboard() {
               </Pressable>
             </View>
           ) : (
-            <View className="w-full h-20 bg-zinc-900 rounded-xl border border-zinc-800 items-center justify-center">
+            <View className="w-full h-20 bg-zinc-300 rounded-xl  items-center justify-center">
               <Text className="text-zinc-500 font-medium text-base">No uploads yet</Text>
             </View>
           )}
