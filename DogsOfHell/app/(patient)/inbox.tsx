@@ -71,17 +71,17 @@ export default function MessagesScreen() {
   });
 
   return (
-    <View className="flex-1 bg-zinc-950">
+    <View className="flex-1 ">
       {/* Header section */}
-      <View className="px-4 pt-12 pb-4 bg-zinc-900 border-b border-zinc-800">
+      <View className="px-4 pt-12 pb-4  ">
         <View className="flex-row justify-between items-center mb-4">
-          <Text className="text-white text-3xl font-bold">Responses</Text>
+          <Text className="text-black text-3xl font-bold">Responses</Text>
           <Pressable className="bg-zinc-800 p-2 rounded-full border border-zinc-700">
             <Ionicons name="create-outline" size={22} color="white" />
           </Pressable>
         </View>
 
-        <View className="flex-row items-center bg-zinc-950 rounded-xl px-4 py-2.5 border border-zinc-800">
+        <View className="flex-row items-center bg-white rounded-xl px-4 py-2.5 ">
           <Ionicons name="search" size={20} color="#71717a" />
           <TextInput
             placeholder="Search patients or messages..."
@@ -92,15 +92,15 @@ export default function MessagesScreen() {
       </View>
 
       {/* Filter Tabs */}
-      <View className="flex-row px-4 py-4 gap-3 border-b border-zinc-900">
+      <View className="flex-row px-4 py-4 gap-3 ">
         {(["All", "Active", "Closed"] as const).map((filter) => (
           <Pressable
             key={filter}
             onPress={() => setActiveFilter(filter)}
-            className={`px-5 py-2 rounded-full border ${
+            className={`px-5 py-2 rounded-full  ${
               activeFilter === filter
                 ? "bg-teal-600 border-teal-500"
-                : "bg-zinc-900 border-zinc-700"
+                : "bg-white/10 "
             }`}
           >
             <Text
@@ -119,7 +119,7 @@ export default function MessagesScreen() {
             <Pressable
               key={msg.id}
               onPress={() => setSelectedChat(msg)}
-              className={`flex-row items-center p-4 bg-zinc-900 ${
+              className={`flex-row items-center p-4 ${
                 index !== filteredMessages.length - 1
                   ? "border-b border-zinc-800"
                   : ""
@@ -138,7 +138,7 @@ export default function MessagesScreen() {
               <View className="flex-1 justify-center">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text
-                    className="text-white font-bold text-lg"
+                    className="text-bold font-bold text-lg"
                     numberOfLines={1}
                   >
                     {msg.patientName}
@@ -150,7 +150,7 @@ export default function MessagesScreen() {
                   </Text>
                 </View>
                 <Text
-                  className={`text-sm ${msg.unreadCount > 0 ? "text-zinc-200 font-medium" : "text-zinc-500"}`}
+                  className={`text-sm ${msg.unreadCount > 0 ?"  font-medium" : "text-zinc-500"}`}
                   numberOfLines={2}
                 >
                   {msg.lastMessage}

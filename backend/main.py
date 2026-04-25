@@ -53,3 +53,7 @@ async def predict(file: UploadFile = File(...)):
         "scores": scores,
         "priority_order": sorted_indices
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

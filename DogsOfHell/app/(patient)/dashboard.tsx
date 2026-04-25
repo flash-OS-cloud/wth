@@ -78,7 +78,7 @@ export default function Dashboard() {
 
         // NOTE: Use 10.0.2.2 for Android Emulators to hit Windows Localhost
         console.log("Pinging ML backend...");
-        const response = await fetch("http://192.168.1.6:8000/predict", {
+        const response = await fetch("https://salted-noncoagulable-earnest.ngrok-free.dev/predict", {
     method: "POST",
     body: formData,
     headers: { "Content-Type": "multipart/form-data" },
